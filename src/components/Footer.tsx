@@ -13,9 +13,18 @@ const Footer = () => {
           </div>
 
           <div className="btn_social">
-            <a href="https://www.linkedin.com/in/cassio-queiroz-pereira" target="_blank" rel="noreferrer"><button><i className="bi bi-linkedin"></i></button></a>
-            <a href="https://github.com/cassioqueirozpereira" target="_blank" rel="noreferrer"><button><i className="bi bi-github"></i></button></a>
-            <a href="https://www.instagram.com/queirozpereiracassio/" target="_blank" rel="noreferrer"><button><i className="bi bi-instagram"></i></button></a>
+            <a href="https://www.linkedin.com/in/cassio-queiroz-pereira" target="_blank" rel="noreferrer">
+                <button><i className="bi bi-linkedin"></i></button>
+              </a>
+              <a href="https://github.com/cassioqueirozpereira" target="_blank" rel="noreferrer">
+                <button><i className="bi bi-github"></i></button>
+              </a>
+              <a href="https://www.instagram.com/queirozpereiracassio/" target="_blank" rel="noreferrer">
+                <button><i className="bi bi-instagram"></i></button>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100075939005941" target="_blank" rel="noreferrer">
+                <button><i className="bi bi-facebook"></i></button>
+              </a>
           </div>
         </div>
 

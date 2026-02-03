@@ -3,18 +3,17 @@ const Specialties = () => {
     {
       icon: "bi-code-square",
       title: "Website",
-      text: "Unindo HTML5, CSS3, JavaScript, PHP, Node.js e outras tecnologias..."
-    },
-    {
-      icon: "bi-filetype-java",
-      title: "Programação Multiplataforma",
-      text: "Programar em linguagens como Python, C++, Java e sistemas de Banco de Dados..."
+      text: "Unindo React.js com HTML, Sass, Typescript, Bootstrap e outras tecnologias..."
     },
     {
       icon: "bi-github",
       title: "Git e Github",
       text: "Controle de versões com Git e GitHub para gerenciamento eficiente de código..."
-    }
+    },    {
+      icon: "bi-filetype-java",
+      title: "Programação Multiplataforma",
+      text: "Programar em linguagens como C#.NET, Java, Python com Banco de Dados..."
+    },
   ];
 
   return (

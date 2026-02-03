@@ -75,6 +75,24 @@ header {
             }
         }
     }
+
+    .btn_contato button {
+        padding: 10px 30px;
+        font-size: 18px;
+        font-weight: 600;
+        background-color: #3dbf2f;
+        border: 0;
+        border-radius: 30px;
+        /* quando vc passa o mouse, por cima dessa tag, muda o cursor para a mãozinha */
+        cursor: pointer;
+        /* tempo para fazer a transição */
+        transition: .3s;
+
+        &:hover {
+            box-shadow: 0px 0px 15px $verde-master;
+            transform: scale(1.15);
+        }
+    }
 }
 
 /* ============================================ MENU MOBILE LOGIC======================================*/
@@ -331,6 +349,12 @@ header {
 /* ============================================FOOTER STYLE ===========================================*/
 footer {
     padding: 80px 4%;
+    .logo img {
+        height: 75px;
+        transition: .3s;
+        &:hover { transform: scale(1.08); }
+    }
+    
     .line_footer {
         display: flex;
         justify-content: space-between;

@@ -19,11 +19,11 @@ const About = () => {
             <h4>SOBRE MIM:</h4>
 
             <p>
-              Sou um profissional movido por um forte senso de responsabilidade e empatia, sempre buscando contribuir positivamente em qualquer equipe e ambiente. Valorizo imensamente a colaboração e a construção de bons relacionamentos interpessoais.
+              Sou um profissional focado em tecnologia, unindo uma sólida experiência em otimização de processos industriais com o desenvolvimento de software. Valorizo a colaboração, a análise crítica e a construção de soluções que gerem impacto real na eficiência das organizações.
             </p>
 
             <p>
-              Atualmente, dedico meu tempo livre ao desenvolvimento de projetos que otimizam tarefas diárias, com foco principal em programação C/C++. Em paralelo, aprimoro continuamente minhas habilidades em Análise e Desenvolvimento de Sistemas, com foco em Banco de Dados, Power BI e desenvolvimento Back-end.
+              Atualmente, curso Análise e Desenvolvimento de Sistemas e dedico-me à criação de ferramentas de automação e análise de dados. Meu foco técnico está no ecossistema <strong>C# .NET, Python, Java e SQL</strong>. Tenho experiência prática no desenvolvimento de aplicações que otimizam tarefas complexas, transformando dados em inteligência de negócio com o uso de <strong>Power BI</strong> e soluções <strong>Back-end</strong>.
             </p>
 
             {/* Redes Sociais */}

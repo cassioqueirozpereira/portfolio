@@ -1,3 +1,5 @@
+import './Specialties.scss';
+
 const Specialties = () => {
   const especialidades = [
     {

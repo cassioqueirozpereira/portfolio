@@ -1,5 +1,6 @@
-import logo from '../assets/images/logo.png';
-import feImg from '../assets/images/fe.png';
+import "./Footer.scss"
+import logo from '../../assets/images/logo.png';
+import feImg from '../../assets/images/fe.png';
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="interface">
         <div className="line_footer border_bottom">
           <div className="logo">
-            <a href="#">
+            <a href="#contato">
               <img src={logo} alt="logo" />
             </a>
           </div>

@@ -1,0 +1,52 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css"; 
+@import "variables";
+
+@font-face {
+    font-family: "mao";
+    src: url("../assets/fonts/DancingScript-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "android";
+    src: url("../assets/fonts/idroid.otf");
+}
+
+body {
+    background-color: $preto;
+    color: $branco;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 4%;
+}
+
+span { color: $verde-master; }
+
+h2.title {
+    color: $branco;
+    font-size: 38px;
+    text-align: center;
+}
+
+/* ================= MEDIA QUERIES GLOBAIS ================= */
+
+@media screen and (max-width: $mobile-breakpoint) {
+    .interface {
+        padding: 0 5%; // Dá um respiro maior nas laterais em celulares
+    }
+
+    h2.title {
+        font-size: 32px; // Diminui o título principal em todos os componentes de uma vez
+        line-height: 40px;
+    }
+
+    // Se você tiver margens globais entre as seções, pode ajustá-las aqui
+    section {
+        padding: 60px 4% !important; // Reduz o espaçamento vertical excessivo no mobile
+    }
+}

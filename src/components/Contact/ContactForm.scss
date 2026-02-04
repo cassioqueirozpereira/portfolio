@@ -1,0 +1,92 @@
+@import "../../styles/variables";
+
+.contact_section {
+    padding: 100px 4%;
+    background-color: #000;
+
+    .contact_card {
+        max-width: 700px;
+        margin: 60px auto 0;
+        padding: 50px;
+        background: rgba(255, 255, 255, 0.03); // Efeito de transparência
+        backdrop-filter: blur(10px); // Desfoque atrás do card
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+
+        @media screen and (max-width: 1076px) {
+            padding: 30px 20px;
+            border-radius: 30px;
+        }
+    }
+
+    .input_group {
+        position: relative;
+        margin-bottom: 35px;
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 5px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 18px;
+            outline: none;
+            transition: 0.3s;
+
+            // Quando o input ganha foco ou tem conteúdo, a linha muda de cor
+            &:focus, &:not(:placeholder-shown) {
+                border-bottom-color: $verde-master;
+            }
+        }
+
+        label {
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        // Lógica do Floating Label: Move o texto para cima
+        input:focus + label,
+        input:not(:placeholder-shown) + label,
+        textarea:focus + label,
+        textarea:not(:placeholder-shown) + label {
+            top: -20px;
+            font-size: 14px;
+            color: $verde-master;
+            font-weight: bold;
+        }
+    }
+
+    .btn_container {
+        text-align: center;
+        margin-top: 20px;
+
+        button {
+            padding: 15px 60px;
+            background-color: $verde-master;
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba($verde-master, 0.6);
+                background-color: lighten($verde-master, 5%);
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+// Cores
+$verde-master: #3dbf2f;
+$preto: #000;
+$branco: #fff;
+$cinza-escuro: #7d7d7d;
+
+// Fontes
+$fonte-android: "android", Arial, sans-serif;
+$fonte-mao: "mao", cursive;
+
+// Mixins (Atalhos úteis)
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition {
+    transition: .3s ease-in-out;
+}
+
+$mobile-breakpoint: 1376px;

@@ -1,4 +1,6 @@
-import euHexagonal from '../assets/images/eu_hexagonal.png';
+import './Hero.scss';
+
+import euHexagonal from '../../assets/images/eu_hexagonal.png';
 
 const Hero = () => {
   return (

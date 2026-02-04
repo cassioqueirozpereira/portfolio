@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+footer {
+    padding: 80px 4%;
+    .logo img {
+        height: 75px;
+        transition: .3s;
+        &:hover { transform: scale(1.08); }
+    }
+    
+    .line_footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+
+        &.border_bottom {
+            border-bottom: 2px solid $verde-master;
+        }
+        
+        p {
+            font-size: 20px;
+            i { color: $verde-master; margin-right: 10px; }
+            a { color: #fff; text-decoration: none; &:hover { text-decoration: underline; } }
+        }
+    }
+
+    .fe img {
+        height: 80px;
+    }
+
+    @media screen and (max-width: $mobile-breakpoint) {
+        .line_footer {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+    }
+}

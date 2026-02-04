@@ -1,4 +1,5 @@
-import euImg from '../assets/images/eu.jpeg';
+import './About.scss';
+import euImg from '../../assets/images/eu.jpeg';
 
 const About = () => {
   return (

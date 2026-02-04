@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.top_site {
+    padding: 100px 4%;
+    h1 {
+        color: #fff;
+        font-size: 42px;
+        line-height: 50px;
+        font-family: $fonte-android;
+        span { font-size: 70px; }
+    }
+    p {
+        color: #fff;
+        padding: 50px 0;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        text-align: justify;
+    }
+    .img_top_site img {
+        position: relative;
+        animation: flutuar 2s ease-in-out infinite alternate;
+        height: 400px;
+        width: 1000px;
+    }
+}
+
+@keyframes flutuar {
+    0% { top: 0; }
+    100% { top: 30px; }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+    .top_site {
+        padding: 20px 10%;
+        text-align: center;
+        
+        h1 { 
+            font-size: 30px; 
+            span { font-size: 45px; } 
+        }
+        
+        p { font-size: 15px; }
+        
+        .img_top_site img {
+            width: 100%; // Ajusta a imagem para não estourar a tela
+            height: auto;
+        }
+    }
+}

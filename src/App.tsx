@@ -1,10 +1,10 @@
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Specialties from './components/Specialties';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Footer from './components/Footer';
-import './main.scss';
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
+import Specialties from './components/Specialties/Specialties';
+import About from './components/About/About';
+import Portfolio from './components/Portfolio/Portfolio';
+import ContactForm from './components/Contact/ContactForm';
+import Footer from './components/Footer/Footer';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
         <Specialties />
         <About />
         <Portfolio />
+        <ContactForm />
         <Footer />
       </main>
     </>

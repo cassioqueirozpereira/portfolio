@@ -1,5 +1,6 @@
+import "./Header.scss";
 import { useState } from 'react';
-import logo from '../assets/images/logo.png';
+import logo from '../../assets/images/logo.png';
 
 const Header = () => {
   // Estado para controlar se o menu está aberto ou não
@@ -9,7 +10,7 @@ const Header = () => {
     <header>
       <div className="interface">
         <div className="logo">
-          <a href="#">
+          <a href="#contato">
             <img src={logo} alt="logo" />
           </a>
         </div>
@@ -24,7 +25,7 @@ const Header = () => {
         </nav>
         
         <div className="btn_contato">
-          <button>CONTATO</button>
+          <a href="#contato"><button>CONTATO</button></a>
         </div>
 
         {/* BOTÃO ABRIR MENU (Sanduíche) */}
@@ -44,6 +45,7 @@ const Header = () => {
               <li><a href="#specialties" onClick={() => setMenuAberto(false)}>HABILIDADES</a></li>
               <li><a href="#about" onClick={() => setMenuAberto(false)}>SOBRE</a></li>
               <li><a href="#portfolio" onClick={() => setMenuAberto(false)}>PROJETOS</a></li>
+              <li><a href="#contato" onClick={() => setMenuAberto(false)}>CONTATO</a></li>
             </ul>
           </nav>
         </div>

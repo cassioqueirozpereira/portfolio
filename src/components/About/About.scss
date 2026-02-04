@@ -1,0 +1,72 @@
+@import "../../styles/variables";
+
+.about {
+    padding: 80px 4%;
+
+    .flex-container {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+
+        @media screen and (max-width: 1076px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .img_about img {
+        height: 400px;
+        border-radius: 30px;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    .txt_about {
+        color: #fff;
+        
+        h2 {
+            font-size: 45px;
+            line-height: 50px;
+            padding-bottom: 30px;
+
+            span {
+                display: block;
+                font-size: 1.2em;
+            }
+        }
+
+        h4 {
+            color: $verde-master;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            padding: 10px 0;
+            text-align: justify;
+            text-indent: 30px;
+        }
+    }
+}
+
+/* BOTÕES SOCIAIS */
+.btn_social {
+    margin-top: 20px;
+    
+    button {
+        height: 60px;
+        width: 60px;
+        background-color: $verde-master;
+        border-radius: 50%;
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+        margin-right: 15px;
+        transition: .3s;
+        color: #000;
+        
+        &:hover {
+            box-shadow: 0px 0px 15px $verde-master;
+            transform: scale(1.15);
+        }
+    }
+}

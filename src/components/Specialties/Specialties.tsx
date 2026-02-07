@@ -1,33 +1,27 @@
 import './Specialties.scss';
 
 const Specialties = () => {
-  const especialidades = [
-    {
-      icon: "bi-code-square",
-      title: "Website",
-      text: "Unindo React.js com HTML, Sass, Typescript, Bootstrap e outras tecnologias..."
-    },
-    {
-      icon: "bi-github",
-      title: "Git e Github",
-      text: "Controle de versões com Git e GitHub para gerenciamento eficiente de código..."
-    },    {
-      icon: "bi-filetype-java",
-      title: "Programação Multiplataforma",
-      text: "Programar em linguagens como C#.NET, Java, Python com Banco de Dados..."
-    },
+  const skills = [
+    { icon: 'bi-code-slash', title: 'Development', desc: 'Criação de sites modernos e responsivos com React.js, Typescript, SASS, Bootstrap e outras tecnologias. Conhecimento em C# .NET, JAVA, e Banco de Dados.' },
+    { icon: 'bi-cpu', title: 'Performance', desc: 'Foco em velocidade de carregamento e otimização de código para SEO.' },
+    { icon: 'bi-phone', title: 'Mobile Friendly', desc: 'Interfaces otimizadas para uma experiência perfeita em dispositivos móveis.' }
   ];
 
   return (
-    <section id="specialties" className="specialties">
+    <section className="specialties py-5" id="specialties">
       <div className="interface">
-        <h2 className="title">MINHAS <span>ESPECIALIDADES.</span></h2>
-        <div className="d-flex flex-wrap justify-content-center gap-4 mt-5">
-          {especialidades.map((item, index) => (
-            <div key={index} className="specialties_box">
-              <i className={`bi ${item.icon}`}></i>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+        <h2 className="title mb-5">Minhas <span>Habilidades.</span></h2>
+        
+        <div className="row g-4 justify-content-center">
+          {skills.map((skill, index) => (
+            <div className="col-12 col-md-4" key={index}>
+              <div className="specialty-card p-4 h-100 transition-up shadow">
+                <div className="icon-box mb-3">
+                  <i className={`bi ${skill.icon}`}></i>
+                </div>
+                <h3>{skill.title}</h3>
+                <p className="m-0">{skill.desc}</p>
+              </div>
             </div>
           ))}
         </div>

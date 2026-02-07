@@ -3,20 +3,17 @@ $verde-master: #3dbf2f;
 $preto: #000;
 $branco: #fff;
 $cinza-escuro: #7d7d7d;
+$bg-card: rgba(255, 255, 255, 0.03);
 
 // Fontes
 $fonte-android: "android", Arial, sans-serif;
 $fonte-mao: "mao", cursive;
 
-// Mixins (Atalhos úteis)
-@mixin flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+// Transições
+$transition-fast: all 0.3s ease;
+$transition-premium: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-@mixin transition {
-    transition: .3s ease-in-out;
-}
+// Breakpoints
+$mobile: 768px;
 
-$mobile-breakpoint: 1376px;
+$section-padding: 100px 0; // Isso define o padrão de respiro das seções

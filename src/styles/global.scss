@@ -1,16 +1,9 @@
+@import "variables";
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons.css"; 
-@import "variables";
 
-@font-face {
-    font-family: "mao";
-    src: url("../assets/fonts/DancingScript-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "android";
-    src: url("../assets/fonts/idroid.otf");
-}
+@font-face { font-family: "mao"; src: url("../assets/fonts/DancingScript-VariableFont_wght.ttf"); }
+@font-face { font-family: "android"; src: url("../assets/fonts/idroid.otf"); }
 
 body {
     background-color: $preto;
@@ -21,32 +14,100 @@ body {
 
 .interface {
     max-width: 1280px;
-    margin: auto;
-    padding: 0 4%;
+    margin: 0 auto;
+    padding: 50px 2%;
+}
+
+section { padding: 100px 0; }
+
+h2.title {
+    font-size: clamp(35px, 5vw, 50px);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.btn-social {
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: $bg-card;
+    color: $verde-master;
+    font-size: 22px;
+    transition: $transition-premium;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+
+    &:hover {
+        background: $verde-master;
+        color: $preto !important;
+        transform: translateY(-8px);
+        box-shadow: 0 0 20px rgba($verde-master, 0.4);
+    }
+}
+
+.btn_container {
+    text-align: center;
+    margin-top: 10px;
+
+    button {
+        padding: 15px 60px;
+        background-color: $verde-master;
+        color: $preto;
+        font-size: 18px;
+        font-weight: 700;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: $transition-premium;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba($verde-master, 0.5);
+            filter: brightness(1.1);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+            padding: 15px 20px;
+        }
+    }
+}
+
+// Classe global para logos com efeito de aumento
+.logo-transition {
+    img {
+        transition: all 0.3s ease-in-out; // Usa o tempo que você preferir
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1); // Aumenta 10%
+            filter: drop-shadow(0 0 10px rgba($verde-master, 0.3)); // Opcional: um brilhinho suave
+        }
+    }
+}
+
+.img-destaque {
+    width: 100%;
+    max-width: 450px; // Tamanho máximo no PC
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: $mobile) {
+    section { padding: 60px 0; }
+
+    .img-destaque {
+        max-width: 280px; // Tamanho máximo no Celular
+    }
 }
 
 span { color: $verde-master; }
-
-h2.title {
-    color: $branco;
-    font-size: 38px;
-    text-align: center;
-}
-
-/* ================= MEDIA QUERIES GLOBAIS ================= */
-
-@media screen and (max-width: $mobile-breakpoint) {
-    .interface {
-        padding: 0 5%; // Dá um respiro maior nas laterais em celulares
-    }
-
-    h2.title {
-        font-size: 32px; // Diminui o título principal em todos os componentes de uma vez
-        line-height: 40px;
-    }
-
-    // Se você tiver margens globais entre as seções, pode ajustá-las aqui
-    section {
-        padding: 60px 4% !important; // Reduz o espaçamento vertical excessivo no mobile
-    }
-}

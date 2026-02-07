@@ -1,33 +1,48 @@
 @import "../../styles/variables";
 
 .specialties {
-    padding: 100px 4%;
-    
-    // Adicionamos isso para garantir que o container alinhe os filhos lado a lado
-    .flex-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; // Permite quebrar a linha no mobile
-        gap: 60px;       // Espaço entre as caixas
-    }
+    background-color: #0d0d0d; // Um tom acima do preto puro para dar contraste
+    padding: 170px 0 170px 0 !important;
 
-    .specialties_box {
-        color: #fff;
-        padding: 40px;
+    .specialty-card {
+        background: rgba(255, 255, 255, 0.03); // Fundo levemente visível
+        border: 1px solid rgba($verde-master, 0.1);
         border-radius: 20px;
-        transition: .3s;
-        border: 2px solid transparent;
-        flex: 1 1 300px;  // Faz com que elas tentem ficar lado a lado com base em 300px
-        max-width: 400px; // Não deixa a caixa ficar gigante em telas grandes
-        text-align: center;
-
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px #fff;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        padding: 1000px;
+        
+        .icon-box i {
+            font-size: 50px;
+            color: $verde-master;
+            display: inline-block;
+            transition: 0.3s;
         }
 
-        i { font-size: 70px; color: $verde-master; }
-        h3 { font-size: 30px; padding: 20px 0; }
-        p { text-align: justify; text-indent: 30px; }
+        h3 {
+            color: $branco;
+            font-family: $fonte-android;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: $cinza-escuro;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        &:hover {
+            transform: translateY(-15px);
+            background: rgba($verde-master, 0.05);
+            border-color: $verde-master;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+            .icon-box i {
+                transform: scale(1.1) rotate(5deg);
+                text-shadow: 0 0 15px rgba($verde-master, 0.5);
+            }
+            
+            p { color: $branco; }
+        }
     }
 }

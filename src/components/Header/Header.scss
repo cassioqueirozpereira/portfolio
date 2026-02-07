@@ -1,124 +1,54 @@
 @import "../../styles/variables";
 
-header {
-    padding: 15px 4%;
-    position: sticky;
+// Aplica um efeito de aumento suave (zoom) no elemento ao passar o mouse
+.transition-scale {
+    transition: transform 0.3s ease;
+    &:hover { transform: scale(1.1); }
+}
+
+// Define um fundo verde com sombra brilhante e leve aumento ao passar o mouse
+.transition-hover {
+    background-color: $verde-master; // Pintando manualmente
+    color: #000;
+    transition: all 0.3s ease;
+    &:hover {
+        box-shadow: 0 0 20px rgba($verde-master, 0.6) !important;
+        transform: scale(1.05);
+    }
+}
+
+// Altera a cor do texto de cinza para verde suavemente durante o hover
+.text-secondary-hover {
+    color: $cinza-escuro;
+    transition: color 0.3s;
+    &:hover { color: $verde-master; }
+}
+
+// Adiciona um fundo verde transparente e muda a cor do texto ao passar o mouse
+.hover-bg-green {
+    transition: 0.3s;
+    &:hover {
+        background-color: rgba($verde-master, 0.1);
+        color: $verde-master !important;
+    }
+}
+
+// Altera o cursor do mouse para o ícone de "mãozinha" (clicável)
+.cursor-pointer { cursor: pointer; }
+
+// Configura o painel lateral do menu mobile com animação de largura (slide)
+.menu_mobile {
+    height: 100vh;
+    position: fixed;
     top: 0;
-    width: 100%;
-    background-color: $preto;
-    z-index: 1000;
+    right: 0;
+    z-index: 9999;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(0, 0, 0, 0.8);
 
-    .interface {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .logo img {
-        height: 75px;
-        @include transition;
-        &:hover { transform: scale(1.08); }
-    }
-
-    nav.menu_desktop ul {
-        list-style: none;
-        li {
-            display: inline-block;
-            padding: 0 40px;
-            a {
-                color: $cinza-escuro;
-                text-decoration: none;
-                @include transition;
-                &:hover { color: $branco; }
-            }
-        }
-    }
-
-    .btn_contato button {
-        padding: 10px 30px;
-        font-size: 18px;
-        font-weight: 600;
-        background-color: $verde-master;
-        border: 0;
-        border-radius: 30px;
-        cursor: pointer;
-        @include transition;
-
-        &:hover {
-            box-shadow: 0px 0px 15px $verde-master;
-            transform: scale(1.15);
-        }
-    }
-
-    /* ======================== MENU MOBILE LOGIC ======================== */
-    .btn_abrir_menu {
-        display: none; // Escondido por padrão (desktop)
-        i {
-            color: $verde-master;
-            font-size: 40px;
-            cursor: pointer;
-        }
-    }
-
-    .menu_mobile {
-        background-color: #000;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 99999;
-        width: 0;
-        overflow: hidden;
-        transition: .5s;
-
-        &.abrir_menu {
-            width: 70%; // Quando a classe for aplicada via React
-        }
-
-        .btn_fechar {
-            padding: 20px 5%;
-            i {
-                color: $verde-master;
-                font-size: 30px;
-                cursor: pointer;
-            }
-        }
-
-        nav ul {
-            list-style: none;
-            text-align: right;
-            li a {
-                color: #fff;
-                font-size: 20px;
-                padding: 20px 8%;
-                display: block;
-                text-decoration: none;
-                &:hover {
-                    background-color: $verde-master;
-                    color: #000;
-                }
-            }
-        }
-    }
-
-    .overlay_menu {
-        background-color: #000000df;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 88888;
-    }
-
-    /* Media Query específica para o Header */
-    @media screen and (max-width: $mobile-breakpoint) {
-        .menu_desktop, .btn_contato_header {
-            display: none; 
-        }
-
-        .btn_abrir_menu {
-            display: block; 
-        }
+    &.abrir_menu {
+        width: 60%;
     }
 }

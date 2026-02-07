@@ -1,60 +1,77 @@
+import { useState } from 'react'; // Faltava o import do React/useState
 import "./Header.scss";
-import { useState } from 'react';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo.png'; // Verifique se o caminho está correto
 
 const Header = () => {
-  // Estado para controlar se o menu está aberto ou não
   const [menuAberto, setMenuAberto] = useState(false);
 
+  const menuItems = [
+    { nome: 'HOME', link: '#' },
+    { nome: 'HABILIDADES', link: '#specialties' },
+    { nome: 'SOBRE', link: '#about' },
+    { nome: 'PROJETOS', link: '#portfolio' },
+    { nome: 'CONTATO', link: '#contato' }
+  ];
+
   return (
-    <header>
-      <div className="interface">
+    <header className="interface sticky-top bg-black shadow-lg py-2">
+      <div className="container-fluid d-flex align-items-center justify-content-between px-4">
+        
         <div className="logo">
           <a href="#contato">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" style={{ height: '60px' }} className="img-fluid transition-scale" />
           </a>
         </div>
 
-        <nav className="menu_desktop">
-          <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#specialties">HABILIDADES</a></li>
-            <li><a href="#about">SOBRE</a></li>
-            <li><a href="#portfolio">PROJETOS</a></li>
+        {/* Menu Desktop */}
+        <nav className="menu_desktop d-none d-lg-block">
+          <ul className="d-flex list-unstyled m-0 gap-4">
+            <li><a href="#" className="text-decoration-none text-secondary-hover fw-semibold">HOME</a></li>
+            <li><a href="#specialties" className="text-decoration-none text-secondary-hover fw-semibold">HABILIDADES</a></li>
+            <li><a href="#about" className="text-decoration-none text-secondary-hover fw-semibold">SOBRE</a></li>
+            <li><a href="#portfolio" className="text-decoration-none text-decoration-none text-secondary-hover fw-semibold">PROJETOS</a></li>
           </ul>
         </nav>
         
-        <div className="btn_contato">
-          <a href="#contato"><button>CONTATO</button></a>
+        <div className="btn_contato d-none d-md-block">
+          <a href="#contato">
+            <button className="btn btn-success rounded-pill px-4 fw-bold shadow-sm transition-hover border-0" style={{backgroundColor: '#00ff00', color: '#000'}}>
+               CONTATO
+            </button>
+          </a>
         </div>
 
-        {/* BOTÃO ABRIR MENU (Sanduíche) */}
-        <div className="btn_abrir_menu" onClick={() => setMenuAberto(true)}>
-          <i className="bi bi-list"></i>
+        <div className="btn_abrir_menu d-lg-none" onClick={() => setMenuAberto(true)}>
+          <i className="bi bi-list text-success fs-1" style={{cursor: 'pointer'}}></i>
         </div>
 
-        {/* MENU MOBILE - A classe 'abrir_menu' só aparece se menuAberto for true */}
-        <div className={`menu_mobile ${menuAberto ? 'abrir_menu' : ''}`} id="menu_mobile">
-          <div className="btn_fechar" onClick={() => setMenuAberto(false)}>
-            <i className="bi bi-x-lg"></i>
+        {/* MENU MOBILE */}
+        <div className={`menu_mobile ${menuAberto ? 'abrir_menu' : ''} shadow-lg`}>
+          <div className="text-end p-4" onClick={() => setMenuAberto(false)}>
+            <i className="bi bi-x-lg text-success fs-3" style={{cursor: 'pointer'}}></i>
           </div>
 
-          <nav>
-            <ul>
-              <li><a href="#" onClick={() => setMenuAberto(false)}>HOME</a></li>
-              <li><a href="#specialties" onClick={() => setMenuAberto(false)}>HABILIDADES</a></li>
-              <li><a href="#about" onClick={() => setMenuAberto(false)}>SOBRE</a></li>
-              <li><a href="#portfolio" onClick={() => setMenuAberto(false)}>PROJETOS</a></li>
-              <li><a href="#contato" onClick={() => setMenuAberto(false)}>CONTATO</a></li>
+          <nav className="mt-5">
+            <ul className="list-unstyled">
+              {menuItems.map((item) => (
+                <li key={item.nome}  className="border-bottom border-secondary-subtle">
+                  <a 
+                    href={item.link} 
+                    className="d-block py-3 px-5 text-white text-decoration-none hover-bg-green"
+                    onClick={() => setMenuAberto(false)}
+                  >
+                    {item.nome}
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
 
-        {/* OVERLAY - Só aparece quando o menu está aberto */}
         {menuAberto && (
           <div 
-            className="overlay_menu" 
-            style={{ display: 'block' }} 
+            className="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75" 
+            style={{ zIndex: 8888, backdropFilter: 'blur(.5px)' }}
             onClick={() => setMenuAberto(false)}
           ></div>
         )}
